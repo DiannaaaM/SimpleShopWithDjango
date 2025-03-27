@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 # Create your models here.
@@ -10,7 +11,6 @@ class Category(models.Model):
     class Meta:
         verbose_name = "Product"
         verbose_name_plural = "Products"
-        ordering = ['-created_at']
 
     def __init__(self, name, description):
         self.name = name
@@ -26,13 +26,12 @@ class Products(models.Model):
     description = models.TextField(verbose_name="Description", help_text="Description")
     category = models.ForeignKey(Category, verbose_name="Category", help_text="Category", on_delete=models.CASCADE)
     image = models.ImageField(upload_to='images/', verbose_name="Image", null=True, blank=True, help_text="Image")
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date Added", help_text="Date Added")
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="Date Last Modified", help_text="Date Last Modified")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date Added", help_text="Date Added", blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Date Last Modified", help_text="Date Last Modified", null=True, blank=True)
 
     class Meta:
         verbose_name = "Product"
         verbose_name_plural = "Products"
-        ordering = ['-created_at']
 
     def __init__(self, name, price, description, category, image, created_at, updated_at):
         self.name = name
