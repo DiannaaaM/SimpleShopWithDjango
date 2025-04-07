@@ -13,3 +13,9 @@ def contacts(request):
     category = Category.objects.all()
     context = {'category': category}
     return render(request, 'contacts.html', context)
+
+
+def products_list(request):
+    products = Products.objects.all()
+    context = {"products": products}
+    return render(request, 'base.html', context)
