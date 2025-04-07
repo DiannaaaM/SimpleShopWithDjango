@@ -5,7 +5,7 @@ from datetime import datetime
 # Create your models here.
 
 class Category(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Name", help_text="Category Name")
+    name = models.TextField(max_length=100, verbose_name="Name", help_text="Category Name")
     description = models.TextField(verbose_name="Description", help_text="Description")
 
     class Meta:
