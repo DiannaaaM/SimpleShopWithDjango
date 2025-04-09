@@ -1,0 +1,22 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Product 1",
+      "description": "Description of Product 1",
+      "price": 10.00,
+      "category": 1
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Product 2",
+      "description": "Description of Product 2",
+      "price": 20.00,
+      "category": 2
+    }
+  }
+]
